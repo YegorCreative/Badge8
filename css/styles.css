@@ -772,15 +772,6 @@ body::after {
   -webkit-text-stroke-color: rgba(245, 241, 234, 0.058);
 }
 
-/* Touch devices: always show description */
-@media (hover: none) {
-  .prod-desc {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .prod-meta { opacity: 0.8; }
-}
-
 /* ============================================================
    THE APPROACH — Chapter-title format
    ============================================================ */
@@ -1018,9 +1009,7 @@ body::after {
   color: var(--faint);
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+/* Responsive rules are in css/responsive.css */
 
 /* Tablet */
 @media (max-width: 1000px) {
