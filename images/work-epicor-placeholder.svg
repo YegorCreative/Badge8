@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="e-blur-xl" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+    <filter id="e-blur-md" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- Base: deep warm obsidian — foundry darkness -->
+  <rect width="1200" height="450" fill="#0e0804"/>
+
+  <!-- Dominant amber industrial practical — lower left (furnace / floor lamp) -->
+  <ellipse cx="55"  cy="410" rx="460" ry="300" fill="#8c3208" opacity="0.68" filter="url(#e-blur-xl)"/>
+  <ellipse cx="190" cy="360" rx="210" ry="145" fill="#c04c16" opacity="0.32" filter="url(#e-blur-xl)"/>
+  <ellipse cx="120" cy="420" rx="100" ry="65"  fill="#d9600c" opacity="0.22" filter="url(#e-blur-md)"/>
+
+  <!-- Secondary amber bloom — far right (another practical) -->
+  <ellipse cx="1150" cy="390" rx="280" ry="210" fill="#7a2c06" opacity="0.42" filter="url(#e-blur-xl)"/>
+
+  <!-- Copper mid-ground — depth fill, centre -->
+  <ellipse cx="600" cy="310" rx="320" ry="170" fill="#5a1e06" opacity="0.14" filter="url(#e-blur-xl)"/>
+
+  <!-- Architectural grid verticals — manufacturing bays, piers -->
+  <rect x="300" y="0" width="1" height="450" fill="#f5f1ea" opacity="0.035"/>
+  <rect x="600" y="0" width="1" height="450" fill="#f5f1ea" opacity="0.025"/>
+  <rect x="900" y="0" width="1" height="450" fill="#f5f1ea" opacity="0.035"/>
+</svg>
