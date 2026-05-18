@@ -369,105 +369,167 @@ body {
 /* --- Work ----------------------------------------- */
 
 #work {
-  padding: var(--section-padding) 0;
+  padding: var(--section-v) 0;
   border-bottom: 1px solid var(--border);
 }
 
+/*
+  Asymmetric editorial grid:
+  Row 1 — Epicor (2/3)  |  Infor (1/3)
+  Row 2 — Workday (1/3) |  ServiceNow (2/3)
+*/
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 340px 340px;
   gap: 1px;
   background-color: var(--border);
   border: 1px solid var(--border);
   margin-top: 4px;
 }
 
+.work-tile:nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
+.work-tile:nth-child(2) { grid-column: 3;     grid-row: 1; }
+.work-tile:nth-child(3) { grid-column: 1;     grid-row: 2; }
+.work-tile:nth-child(4) { grid-column: 2 / 4; grid-row: 2; }
+
 .work-tile {
   position: relative;
-  aspect-ratio: 16 / 9;
-  background-color: #0b0b0b;
   overflow: hidden;
-  cursor: default;
 }
 
-/* Subtle copper glow on hover */
+/* Subtle warm/cool tonal variation per tile */
+.work-tile:nth-child(1) { background-color: #0d0c0b; }
+.work-tile:nth-child(2) { background-color: #0b0b0d; }
+.work-tile:nth-child(3) { background-color: #0b0d0c; }
+.work-tile:nth-child(4) { background-color: #0c0b0b; }
+
+/* CSS-only film grain via SVG feTurbulence */
+.work-grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.18'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Restrained copper atmosphere on hover */
 .work-tile::before {
   content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse 60% 60% at 50% 50%,
-    rgba(217, 124, 63, 0.07) 0%,
+    ellipse 75% 75% at 38% 62%,
+    rgba(217, 124, 63, 0.065) 0%,
     transparent 100%
   );
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.8s ease;
   pointer-events: none;
+  z-index: 2;
 }
 
 .work-tile:hover::before {
   opacity: 1;
 }
 
-/* Cinematic vignette */
+/* Cinematic vignette — permanent */
 .work-tile::after {
   content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse 90% 90% at 50% 50%,
-    transparent 40%,
-    rgba(10, 10, 10, 0.55) 100%
+    ellipse 100% 80% at 50% 50%,
+    transparent 28%,
+    rgba(8, 8, 8, 0.72) 100%
   );
   pointer-events: none;
+  z-index: 3;
 }
 
+/* Metadata bar — top of tile */
+.work-tile-meta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  border-bottom: 1px solid rgba(245, 241, 234, 0.055);
+  z-index: 4;
+}
+
+.work-year,
+.work-format {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* Label cluster — bottom of tile */
 .work-tile-inner {
   position: absolute;
-  bottom: 28px;
-  left: 32px;
-  right: 32px;
-  z-index: 1;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  z-index: 4;
 }
 
 .work-status {
   display: block;
   font-family: var(--font-ui);
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-size: 10px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--copper);
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .work-client {
   font-family: var(--font-head);
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 400;
   color: var(--text);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  margin-bottom: 7px;
+}
+
+.work-desc {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--dim);
 }
 
 /* --- Approach ------------------------------------- */
 
 #approach {
-  padding: var(--section-padding) 0;
+  padding: var(--section-v) 0;
   border-bottom: 1px solid var(--border);
 }
 
 .approach-list {
   list-style: none;
-  max-width: 680px;
+  max-width: 740px;
   margin-top: 4px;
 }
 
 .approach-list li {
   display: flex;
   align-items: baseline;
-  gap: 36px;
-  padding: 28px 0;
+  gap: 44px;
+  padding: 30px 0;
   border-bottom: 1px solid var(--border);
-  transition: border-color 0.3s ease;
+  transition: border-color 0.4s ease;
 }
 
 .approach-list li:first-child {
@@ -475,25 +537,31 @@ body {
 }
 
 .approach-list li:hover {
-  border-bottom-color: var(--border-hover);
+  border-bottom-color: var(--border-soft);
+}
+
+.approach-list li:hover .approach-text {
+  color: var(--text);
 }
 
 .approach-num {
   font-family: var(--font-ui);
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-size: 10px;
+  letter-spacing: 0.2em;
   color: var(--copper);
   flex-shrink: 0;
-  min-width: 28px;
+  min-width: 22px;
+  padding-top: 3px;
 }
 
 .approach-text {
   font-family: var(--font-head);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  color: var(--text);
+  color: var(--muted);
   letter-spacing: 0.03em;
-  line-height: 1.4;
+  line-height: 1.3;
+  transition: color 0.4s ease;
 }
 
 /* --- About ---------------------------------------- */
