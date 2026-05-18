@@ -290,61 +290,80 @@ body {
 /* --- Problem -------------------------------------- */
 
 #problem {
-  padding: var(--section-padding) 0;
+  padding: var(--section-v) 0;
   border-bottom: 1px solid var(--border);
+}
+
+/* Editorial two-column split: headline left, body right */
+.problem-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 88px;
+  align-items: start;
+}
+
+.problem-head .section-headline {
+  margin-bottom: 0;
+}
+
+.problem-body .section-body:last-child {
+  margin-bottom: 0;
 }
 
 /* --- Services / What We Do ------------------------ */
 
 #services {
-  padding: var(--section-padding) 0;
+  padding: var(--section-v) 0;
   border-bottom: 1px solid var(--border);
 }
 
+/* Editorial index cards — hairline top border only, no boxes */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  border: 1px solid var(--border);
-  background-color: var(--border);
+  column-gap: 52px;
   margin-top: 4px;
 }
 
 .card {
-  background-color: var(--bg);
-  padding: 52px 40px;
-  transition: background-color 0.4s ease;
+  padding: 44px 0;
+  border-top: 1px solid var(--border);
+  transition: border-top-color 0.5s ease;
 }
 
 .card:hover {
-  background-color: #111111;
+  border-top-color: rgba(217, 124, 63, 0.3);
 }
 
 .card-number {
   display: block;
   font-family: var(--font-ui);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--faint);
+  margin-bottom: 32px;
+  transition: color 0.4s ease;
+}
+
+.card:hover .card-number {
   color: var(--copper);
-  margin-bottom: 28px;
 }
 
 .card-title {
   font-family: var(--font-head);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--text);
-  letter-spacing: 0.04em;
-  margin-bottom: 20px;
-  line-height: 1.4;
+  letter-spacing: 0.055em;
+  margin-bottom: 18px;
+  line-height: 1.5;
 }
 
 .card-body {
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.88;
+  color: var(--dim);
 }
 
 /* --- Work ----------------------------------------- */
