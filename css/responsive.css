@@ -1,6 +1,5 @@
 /* ================================================================
    BADGE 8 — RESPONSIVE
-   Palette: Warm Graphite / Ivory / Steel / Aubergine
    ================================================================ */
 
 
@@ -26,7 +25,6 @@
 /* ── 760px — tablet portrait ─────────────────────────────── */
 @media (max-width: 760px) {
 
-  /* Hero: stack, media frame above content */
   .hero-inner {
     grid-template-columns: 1fr;
     padding-top: 80px;
@@ -35,17 +33,14 @@
   }
   .hero-media { order: -1; }
 
-  /* Proof strip: allow wrap */
   .proof-list { flex-wrap: wrap; }
 
-  /* Problem: stack */
   .problem-inner {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   .problem-right p { max-width: 100%; }
 
-  /* Services: num col + title+desc */
   .service-row {
     grid-template-columns: 56px 1fr;
     grid-template-rows: auto auto;
@@ -56,7 +51,6 @@
   .service-title { grid-column: 2; grid-row: 1; }
   .service-desc  { grid-column: 2; grid-row: 2; }
 
-  /* Work: stack frame then meta */
   .work-row {
     grid-template-columns: 1fr;
     padding: 40px 0;
@@ -64,10 +58,14 @@
   }
   .work-meta { padding-top: 0; }
 
-  /* Approach */
   .approach-step {
     grid-template-columns: 48px 1fr;
     gap: 0 20px;
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }
 
@@ -80,23 +78,20 @@
     --gutter: 20px;
   }
 
-  /* Nav: keep only CTA */
   .nav-links li:not(:last-child) { display: none; }
 
-  /* Proof strip: vertical */
   .proof-list {
     flex-direction: column;
     align-items: flex-start;
   }
   .proof-list li {
     border-right: none;
-    border-bottom: 1px solid rgba(245, 241, 234, 0.10);
+    border-bottom: 1px solid var(--border);
     width: 100%;
     padding: 14px 0;
   }
   .proof-list li:last-child { border-bottom: none; }
 
-  /* Services: single column */
   .service-row {
     grid-template-columns: 1fr;
     gap: 4px;
@@ -106,15 +101,27 @@
   .service-title { grid-column: 1; grid-row: 2; }
   .service-desc  { grid-column: 1; grid-row: 3; }
 
-  /* Form: stack */
-  .form-row { flex-direction: column; max-width: 100%; }
-  .contact-form input[type="email"] {
-    border-right: 1px solid rgba(245, 241, 234, 0.22);
-    border-bottom: none;
+  .form-row {
+    flex-direction: column;
+    max-width: 100%;
+    border-radius: 12px;
+    overflow: visible;
+    border: none;
+    background: transparent;
+    gap: 8px;
   }
-  .contact-form .btn-primary { width: 100%; text-align: center; }
+  .contact-form input[type="email"] {
+    border-radius: 12px;
+    border: 1px solid var(--border-mid);
+    width: 100%;
+  }
+  .contact-form .btn-primary {
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    margin: 0;
+  }
 
-  /* Footer */
   .footer-inner {
     flex-direction: column;
     gap: 8px;
