@@ -685,176 +685,152 @@ body {
   letter-spacing: 0.08em;
   color: var(--faint);
 }
-  font-family: var(--font-ui);
-  font-size: 0.88rem;
-  padding: 15px 22px;
-  outline: none;
-  transition: border-color 0.3s ease;
-  -webkit-appearance: none;
-  border-radius: 0;
-}
-
-.form-row input[type="email"]::placeholder {
-  color: var(--faint);
-}
-
-.form-row input[type="email"]:focus {
-  border-color: rgba(245, 241, 234, 0.22);
-}
-
-.form-row .btn {
-  flex-shrink: 0;
-  border-radius: 0;
-}
-
-.form-confirm {
-  margin-top: 22px;
-  font-family: var(--font-ui);
-  font-size: 0.83rem;
-  letter-spacing: 0.02em;
-  color: var(--muted);
-  min-height: 1.4em;
-}
-
-/* --- Footer --------------------------------------- */
-
-#footer {
-  padding: 44px 0;
-}
-
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.footer-left,
-.footer-right {
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  color: var(--faint);
-}
-
 /* --- Responsive ----------------------------------- */
 
-@media (max-width: 960px) {
+/* Tablet: collapse 4-col cards to 2, reset work grid */
+@media (max-width: 1000px) {
+  :root {
+    --pad: 36px;
+  }
+
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 36px;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: 280px;
+  }
+
+  /* Reset asymmetric placement */
+  .work-tile:nth-child(1),
+  .work-tile:nth-child(2),
+  .work-tile:nth-child(3),
+  .work-tile:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 
+/* Mobile */
 @media (max-width: 720px) {
   :root {
-    --section-padding: 80px;
-    --container-pad: 24px;
+    --section-v: 80px;
+    --pad: 22px;
   }
 
+  /* Nav wraps to two rows */
   .nav-inner {
     height: auto;
     flex-wrap: wrap;
-    gap: 14px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    gap: 12px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
   .nav-links {
-    gap: 24px;
+    gap: 20px;
     flex-wrap: wrap;
   }
 
-  .nav-links a {
-    font-size: 0.72rem;
-  }
-
+  /* Hero */
   #hero {
     padding-top: 140px;
     padding-bottom: 80px;
   }
 
   .hero-headline {
-    font-size: clamp(2.2rem, 8vw, 3rem);
+    font-size: clamp(2.3rem, 9vw, 3.2rem);
   }
 
   .hero-sub {
     font-size: 1rem;
-    margin-bottom: 40px;
+    margin-bottom: 44px;
   }
 
   .hero-buttons {
     flex-direction: column;
-    width: 100%;
+    align-items: stretch;
   }
 
   .hero-buttons .btn {
     text-align: center;
-    width: 100%;
   }
 
+  .hero-aspect {
+    display: none;
+  }
+
+  /* Problem — stack columns */
+  .problem-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Cards — single column */
   .cards-grid {
     grid-template-columns: 1fr;
+    column-gap: 0;
   }
 
   .card {
-    padding: 40px 28px;
+    padding: 36px 0;
   }
 
+  /* Work — single column */
   .work-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
   }
 
+  /* Approach */
   .approach-text {
     font-size: 1.05rem;
   }
 
+  /* About */
   #about {
     padding: 100px 0;
   }
 
-  .form-row {
-    flex-direction: column;
+  /* Contact */
+  .form-field {
     max-width: 100%;
   }
 
-  .form-row input[type="email"] {
-    border-right: 1px solid var(--border);
-    border-bottom: none;
-  }
-
-  .form-row input[type="email"]:focus {
-    border-color: rgba(245, 241, 234, 0.22);
-  }
-
-  .form-row .btn {
+  .contact-form .btn {
+    display: block;
     width: 100%;
     text-align: center;
   }
 
+  /* Footer */
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
-
-  .section-headline {
-    font-size: clamp(1.4rem, 5vw, 2rem);
-  }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
-  .nav-links {
-    gap: 18px;
+  .work-tile-meta {
+    padding: 13px 16px;
   }
 
   .work-tile-inner {
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
   }
 
   .work-client {
     font-size: 1.2rem;
+  }
+
+  .work-desc {
+    display: none;
   }
 }
