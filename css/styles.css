@@ -15,16 +15,21 @@
 /* --- Design Tokens -------------------------------- */
 
 :root {
-  --bg:          #070707;
-  --bg-2:        #0a0909;
-  --bg-3:        #0c0b0a;
+  --bg:          #0f0d0b;   /* warm charcoal — not flat TV black */
+  --bg-2:        #171410;   /* warm espresso */
+  --bg-3:        #1e1a15;   /* warm brown-charcoal — manifesto depth */
   --text:        #f5f1ea;
   --muted:       #a8a39b;
   --dim:         #7a756d;
   --faint:       #4e4a44;
   --copper:      #d97c3f;
-  --border:      rgba(245, 241, 234, 0.055);
-  --border-mid:  rgba(245, 241, 234, 0.10);
+  --bone:        #f0ebe2;   /* cream — editorial light panels */
+  --ink:         #1a1714;   /* near-black for text on bone */
+  --ink-muted:   #4a4439;   /* body text on bone */
+  --ink-dim:     #7a7268;   /* subtle text on bone */
+  --border:      rgba(245, 241, 234, 0.06);
+  --border-mid:  rgba(245, 241, 234, 0.12);
+  --border-bone: rgba(26, 23, 20, 0.10);  /* hairline on cream panels */
 
   --font-head:   'Cinzel', Georgia, serif;
   --font-body:   Georgia, 'Times New Roman', serif;
@@ -49,18 +54,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Global film grain — fixed overlay on the entire viewport */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.24'/%3E%3C/svg%3E");
-  background-size: 240px 240px;
-  mix-blend-mode: screen;
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 9999;
-}
+/* Film grain removed — surfaces carry the depth now */
 
 /* --- Accessibility -------------------------------- */
 
@@ -112,7 +106,7 @@ body::after {
 /* Copper foil — primary action */
 .btn-foil {
   background-color: var(--copper);
-  color: #070707;
+  color: var(--ink);
   border-color: var(--copper);
 }
 
@@ -147,7 +141,7 @@ body::after {
 }
 
 #nav.scrolled {
-  background-color: rgba(7, 7, 7, 0.94);
+  background-color: rgba(15, 13, 11, 0.96);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
   border-bottom: 1px solid var(--border);
@@ -268,14 +262,14 @@ body::after {
     radial-gradient(ellipse 38% 32% at 82%  8%,   rgba(78, 98, 138, 0.11) 0%, transparent 65%);
 }
 
-/* Edge vignette — cinematic depth, draws eye inward */
+/* Edge vignette — reduced so SVG atmosphere breathes */
 .hero-atmo-vignette {
   position: absolute;
   inset: 0;
   background: radial-gradient(
     ellipse 110% 80% at 50% 50%,
-    transparent 35%,
-    rgba(3, 3, 3, 0.88) 100%
+    transparent 38%,
+    rgba(4, 3, 3, 0.62) 100%
   );
 }
 
@@ -410,49 +404,29 @@ body::after {
 }
 
 /* ============================================================
-   THE CHALLENGE — Asymmetric ghost-marker layout
-   Giant ghost "01" bleeds from the left;
-   content is offset right like an editorial spread
+   THE CHALLENGE — Bone editorial split panel
+   Cream surface breaks the dark run; editorial two-column rhythm
    ============================================================ */
 
 #problem {
-  position: relative;
   padding: var(--section-v) 0;
-  background-color: var(--bg-2);
-  border-top: 1px solid var(--border);
-  overflow: hidden;
-}
-
-/* Oversized ghost chapter number — decorative depth */
-.problem-ghost {
-  position: absolute;
-  top: 50%;
-  left: -0.06em;
-  transform: translateY(-50%);
-  font-family: var(--font-head);
-  font-size: clamp(18rem, 32vw, 32rem);
-  font-weight: 400;
-  line-height: 0.8;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(245, 241, 234, 0.022);
-  pointer-events: none;
-  user-select: none;
-  white-space: nowrap;
-  z-index: 0;
+  background-color: var(--bone);
+  border-top: 1px solid var(--border-bone);
+  border-bottom: 1px solid var(--border-bone);
 }
 
 .problem-inner {
-  position: relative;
-  z-index: 1;
   max-width: var(--container-w);
   margin: 0 auto;
   padding: 0 var(--pad);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
 }
 
-/* Content pushed to the right — creates tension with the ghost mark */
-.problem-content {
-  max-width: 680px;
-  margin-left: auto;
+.problem-right {
+  padding-top: 72px;
 }
 
 .problem-headline {
@@ -461,15 +435,14 @@ body::after {
   font-weight: 400;
   line-height: 1.22;
   letter-spacing: 0.01em;
-  color: var(--text);
-  margin-bottom: 52px;
+  color: var(--ink);
+  margin-bottom: 0;
 }
 
-/* Georgia italic continuation line — dim, softer */
 .problem-headline em {
   font-family: var(--font-body);
   font-style: italic;
-  color: var(--dim);
+  color: var(--ink-muted);
   display: block;
   margin-top: 14px;
 }
@@ -478,14 +451,14 @@ body::after {
   font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.88;
-  color: var(--muted);
+  color: var(--ink-muted);
   max-width: 520px;
   margin-bottom: 20px;
 }
 
 .problem-pull {
   font-style: italic;
-  color: var(--dim) !important;
+  color: var(--ink-dim) !important;
   margin-bottom: 0 !important;
 }
 
@@ -595,11 +568,11 @@ body::after {
 
 .work-headline {
   font-family: var(--font-head);
-  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-size: clamp(2.4rem, 4.8vw, 4.4rem);
   font-weight: 400;
   letter-spacing: 0.02em;
   color: var(--text);
-  line-height: 1.18;
+  line-height: 1.1;
   margin-top: 0;
 }
 
@@ -612,7 +585,7 @@ body::after {
 /* Each panel — wide cinematic landscape */
 .production {
   position: relative;
-  height: 460px;
+  height: 520px;
   overflow: hidden;
   border-top: 1px solid rgba(245, 241, 234, 0.04);
   cursor: default;
@@ -669,20 +642,20 @@ body::after {
     url('../images/work-servicenow-placeholder.svg') center / cover;
 }
 
-/* Deep cinematic vignette on each panel */
+/* Cinematic vignette — reduced so SVG colour fields read */
 .prod-vignette {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 110% 85% at 50% 50%, transparent 28%, rgba(4, 4, 4, 0.78) 100%),
-    linear-gradient(to top,    rgba(4, 4, 4, 0.85) 0%,  transparent 45%),
-    linear-gradient(to bottom, rgba(4, 4, 4, 0.45) 0%,  transparent 28%);
+    radial-gradient(ellipse 110% 85% at 50% 50%, transparent 30%, rgba(4, 4, 4, 0.56) 100%),
+    linear-gradient(to top,    rgba(4, 4, 4, 0.70) 0%,  transparent 48%),
+    linear-gradient(to bottom, rgba(4, 4, 4, 0.26) 0%,  transparent 30%);
   pointer-events: none;
   z-index: 2;
   transition: opacity 0.6s ease;
 }
 
-.production:hover .prod-vignette { opacity: 0.82; }
+.production:hover .prod-vignette { opacity: 0.85; }
 
 /* Production content layer */
 .prod-body {
@@ -755,26 +728,8 @@ body::after {
   transform: translateY(0);
 }
 
-/* Decorative oversized index number — top right, ghost */
-.prod-index {
-  position: absolute;
-  top: 24px;
-  right: 56px;
-  font-family: var(--font-head);
-  font-size: clamp(7rem, 16vw, 16rem);
-  font-weight: 400;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(245, 241, 234, 0.038);
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-  z-index: 2;
-  transition: -webkit-text-stroke-color 0.6s ease;
-}
-
-.production:hover .prod-index {
-  -webkit-text-stroke-color: rgba(245, 241, 234, 0.058);
-}
+/* Ghost index numbers removed — composition carries the weight */
+.prod-index { display: none; }
 
 /* ============================================================
    THE APPROACH — Chapter-title format
@@ -859,7 +814,7 @@ body::after {
 
 #about {
   padding: 150px 0;
-  background-color: var(--bg-2);
+  background-color: var(--bg-3);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -874,32 +829,33 @@ body::after {
   gap: 52px;
 }
 
-/* Vertical hairline marks — like a film title card */
+/* Copper hairline marks — manifesto title card */
 .about-rule {
   width: 1px;
   height: 72px;
-  background: linear-gradient(to bottom, transparent, var(--border-mid), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(217, 124, 63, 0.45), transparent);
 }
 
 .about-statement {
   font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
-  line-height: 1.88;
-  color: var(--muted);
+  font-size: clamp(1.35rem, 2.8vw, 2rem);
+  line-height: 1.8;
+  color: var(--text);
   text-align: center;
-  max-width: 740px;
+  max-width: 780px;
 }
 
 /* ============================================================
-   CONTACT — Quiet final frame
-   Centered, minimal, like end credits beginning
+   CONTACT — Bone editorial close
+   Cream panel mirrors the challenge section; quiet final frame
    ============================================================ */
 
 #contact {
   padding: var(--section-v) 0;
-  border-top: 1px solid var(--border);
+  background-color: var(--bone);
+  border-top: 1px solid var(--border-bone);
 }
 
 .contact-stage {
@@ -915,7 +871,7 @@ body::after {
   font-weight: 400;
   line-height: 1.06;
   letter-spacing: 0.015em;
-  color: var(--text);
+  color: var(--ink);
   margin-bottom: 28px;
 }
 
@@ -924,7 +880,7 @@ body::after {
   font-style: italic;
   font-size: 1.05rem;
   line-height: 1.88;
-  color: var(--dim);
+  color: var(--ink-muted);
   margin-bottom: 68px;
 }
 
@@ -938,12 +894,12 @@ body::after {
   width: 100%;
   max-width: 420px;
   margin-bottom: 36px;
-  border-bottom: 1px solid var(--border-mid);
+  border-bottom: 1px solid rgba(26, 23, 20, 0.18);
   transition: border-bottom-color 0.4s ease;
 }
 
 .form-field:focus-within {
-  border-bottom-color: rgba(245, 241, 234, 0.28);
+  border-bottom-color: rgba(26, 23, 20, 0.48);
 }
 
 .form-label {
@@ -952,7 +908,7 @@ body::after {
   font-size: 10px;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--ink-dim);
   margin-bottom: 14px;
 }
 
@@ -962,7 +918,7 @@ body::after {
   background: none;
   border: none;
   outline: none;
-  color: var(--text);
+  color: var(--ink);
   font-family: var(--font-ui);
   font-size: 0.95rem;
   letter-spacing: 0.03em;
@@ -973,14 +929,14 @@ body::after {
   border-radius: 0;
 }
 
-.form-field input[type="email"]::placeholder { color: var(--faint); }
+.form-field input[type="email"]::placeholder { color: var(--ink-dim); }
 
 .form-confirm {
   margin-top: 28px;
   font-family: var(--font-ui);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
-  color: var(--dim);
+  color: var(--ink-muted);
   min-height: 1.2em;
 }
 

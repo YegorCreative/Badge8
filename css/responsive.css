@@ -38,9 +38,12 @@
     padding-top: 12px;
   }
 
-  .problem-content {
-    max-width: 100%;
+  /* Problem: collapse to single column */
+  .problem-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
+  .problem-right { padding-top: 0; }
 }
 
 /* ---- Mobile (≤720px) -------------------------------------- */
@@ -81,8 +84,6 @@
   .hero-aspect { display: none; }
 
   /* Problem */
-  .problem-ghost { display: none; }
-  .problem-content { max-width: 100%; margin-left: 0; }
   .problem-headline { font-size: clamp(1.8rem, 6.5vw, 2.8rem); }
 
   /* Services */
