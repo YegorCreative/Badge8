@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Badge 8 — A premium generative film studio for enterprise software companies. Cinematic video, built like infrastructure.">
-  <title>Badge 8 &mdash; Cinematic Film Studio</title>
+  <meta name="description" content="Badge 8 — A cinematic film studio for enterprise software companies. Generative video, built like infrastructure.">
+  <title>Badge 8 — Cinematic Film Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- ============================================================
-       NAVIGATION
-  ============================================================ -->
+  <!-- NAV -->
   <nav id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="Badge 8 — home">
-        <span class="nav-infinity" aria-hidden="true">&infin;</span>
+        <span class="nav-mark" aria-hidden="true">&infin;</span>
         <span class="nav-wordmark">BADGE&nbsp;8</span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" role="list">
         <li><a href="#work">Work</a></li>
         <li><a href="#approach">Approach</a></li>
         <li><a href="#about">About</a></li>
@@ -31,77 +29,69 @@
     </div>
   </nav>
 
-  <!-- ============================================================
-       HERO — Apple TV+ title screen energy
-  ============================================================ -->
+  <!-- HERO -->
   <section id="hero" aria-labelledby="hero-headline">
-
-    <!-- Atmospheric layers: warm amber practicals + cool window light -->
-    <div class="hero-atmo" aria-hidden="true">
-      <div class="hero-atmo-base"></div>
-      <div class="hero-atmo-warm"></div>
-      <div class="hero-atmo-cool"></div>
-      <div class="hero-atmo-vignette"></div>
-    </div>
-    <div class="hero-midline" aria-hidden="true"></div>
-
-    <div class="hero-content">
-      <div class="hero-metadata" aria-hidden="true">
-        <span>Badge&nbsp;8</span>
-        <span>A Cinematic Film Studio</span>
-        <span>Est.&nbsp;2026</span>
-      </div>
-      <div class="hero-title">
-        <span class="hero-eyebrow">A Cinematic Film Studio</span>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow">A Cinematic Film Studio</span>
         <h1 id="hero-headline" class="hero-headline">
           The best employee<br>
           <em>you never had.</em>
         </h1>
-      </div>
-      <div class="hero-lower">
         <p class="hero-body">
           Cinematic video, built like infrastructure.<br>
           For enterprise teams who need to move at the speed of the market.
         </p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-foil">Start a conversation</a>
-          <a href="#work"    class="btn btn-ghost">See the work</a>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Start a conversation</a>
+          <a href="#work" class="btn btn-ghost">See the work</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="media-frame" aria-hidden="true">
+          <div class="frame-label">
+            <span class="frame-wordmark">BADGE&nbsp;8</span>
+            <span class="frame-est">EST.&thinsp;2026</span>
+          </div>
+          <span class="frame-ratio">2.39&thinsp;:&thinsp;1</span>
         </div>
       </div>
     </div>
-
-    <span class="hero-aspect" aria-hidden="true">2.39&thinsp;:&thinsp;1</span>
   </section>
 
-  <!-- ============================================================
-       THE CHALLENGE — Bone editorial split panel
-  ============================================================ -->
+  <!-- PROOF STRIP -->
+  <div class="proof-strip" aria-label="Studio capabilities">
+    <ul class="proof-list" role="list">
+      <li>Enterprise video</li>
+      <li>Product storytelling</li>
+      <li>Internal-team speed</li>
+      <li>Zero disruption</li>
+    </ul>
+  </div>
+
+  <!-- THE PROBLEM -->
   <section id="problem" aria-labelledby="problem-headline">
     <div class="problem-inner">
       <div class="problem-left">
         <span class="eyebrow">The Challenge</span>
         <h2 id="problem-headline" class="problem-headline">
           Your product moves industries.<br>
-          <em>But explaining what it does &mdash; that&rsquo;s the hard part.</em>
+          <em>But explaining what it does&mdash;that&rsquo;s the hard part.</em>
         </h2>
       </div>
       <div class="problem-right">
-        <div class="problem-body">
-          <p>Your reps know the product. Your prospects do not. Traditional production slows teams down, interrupts operations, and ships too slowly for modern enterprise pace.</p>
-          <p class="problem-pull">There is a better way to tell the story.</p>
-        </div>
+        <p>Your reps know the product. Your prospects do not. Traditional production slows teams down, interrupts operations, and ships too slowly for modern enterprise pace.</p>
+        <p class="problem-pull">There is a better way to tell the story.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       WHAT WE DO — Editorial horizontal list
-  ============================================================ -->
+  <!-- WHAT WE DO -->
   <section id="services" aria-labelledby="services-headline">
     <div class="container">
-      <div class="services-head">
+      <div class="section-head">
         <span class="eyebrow">What We Do</span>
-        <h2 id="services-headline" class="services-headline">
+        <h2 id="services-headline" class="section-headline">
           One studio.<br><em>End&#8209;to&#8209;end.</em>
         </h2>
       </div>
@@ -130,148 +120,165 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       SELECTED WORK — Immersive full-bleed cinematic panels
-  ============================================================ -->
+  <!-- SELECTED WORK -->
   <section id="work" aria-labelledby="work-headline">
     <div class="work-header container">
       <span class="eyebrow">Selected Work</span>
-      <h2 id="work-headline" class="work-headline">The work speaks.</h2>
+      <h2 id="work-headline" class="section-headline">The work speaks.</h2>
     </div>
-    <div class="productions">
+    <div class="work-list">
 
-      <article class="production" aria-label="Epicor — Manufacturing intelligence">
-        <div class="prod-bg prod-bg--epicor"     aria-hidden="true"></div>
-        <div class="prod-vignette"               aria-hidden="true"></div>
-        <div class="prod-body">
-          <div class="prod-meta">
-            <span class="prod-year">2025</span>
-            <span class="prod-format">Generative Film &middot; Enterprise</span>
-          </div>
-          <div class="prod-title">
-            <h3 class="prod-client">Epicor</h3>
-            <p class="prod-desc">Manufacturing intelligence &mdash; global supply chain narrative</p>
+      <article class="work-row" aria-label="Epicor — Manufacturing intelligence">
+        <div class="work-frame-wrap">
+          <div class="media-frame" aria-hidden="true">
+            <div class="frame-label">
+              <span class="frame-client">Epicor</span>
+              <span class="frame-year">2025</span>
+            </div>
           </div>
         </div>
-        <span class="prod-index" aria-hidden="true">01</span>
+        <div class="work-meta">
+          <h3 class="work-client">Epicor</h3>
+          <div class="work-tags">
+            <span>2025</span>
+            <span class="tag-sep" aria-hidden="true">&middot;</span>
+            <span>Generative Film</span>
+            <span class="tag-sep" aria-hidden="true">&middot;</span>
+            <span>Enterprise</span>
+          </div>
+          <p class="work-desc">Manufacturing intelligence &mdash; global supply chain narrative</p>
+          <span class="work-status">Delivered</span>
+        </div>
       </article>
 
-      <article class="production" aria-label="Infor — Industry cloud">
-        <div class="prod-bg prod-bg--infor"      aria-hidden="true"></div>
-        <div class="prod-vignette"               aria-hidden="true"></div>
-        <div class="prod-body">
-          <div class="prod-meta">
-            <span class="prod-year">2025</span>
-            <span class="prod-format">Generative Film &middot; Enterprise</span>
-          </div>
-          <div class="prod-title">
-            <h3 class="prod-client">Infor</h3>
-            <p class="prod-desc">Industry cloud &mdash; enterprise platform identity</p>
+      <article class="work-row" aria-label="Infor — Industry cloud">
+        <div class="work-frame-wrap">
+          <div class="media-frame" aria-hidden="true">
+            <div class="frame-label">
+              <span class="frame-client">Infor</span>
+              <span class="frame-year">2025</span>
+            </div>
           </div>
         </div>
-        <span class="prod-index" aria-hidden="true">02</span>
+        <div class="work-meta">
+          <h3 class="work-client">Infor</h3>
+          <div class="work-tags">
+            <span>2025</span>
+            <span class="tag-sep" aria-hidden="true">&middot;</span>
+            <span>Generative Film</span>
+            <span class="tag-sep" aria-hidden="true">&middot;</span>
+            <span>Enterprise</span>
+          </div>
+          <p class="work-desc">Industry cloud &mdash; enterprise platform identity</p>
+          <span class="work-status">Delivered</span>
+        </div>
       </article>
 
-      <article class="production" aria-label="Workday — Human capital at scale">
-        <div class="prod-bg prod-bg--workday"    aria-hidden="true"></div>
-        <div class="prod-vignette"               aria-hidden="true"></div>
-        <div class="prod-body">
-          <div class="prod-meta">
-            <span class="prod-year">2026</span>
-            <span class="prod-format">Generative Film &middot; Enterprise</span>
-          </div>
-          <div class="prod-title">
-            <h3 class="prod-client">Workday</h3>
-            <p class="prod-desc">Finance and HR &mdash; human capital at scale</p>
+      <article class="work-row" aria-label="Workday — Human capital at scale">
+        <div class="work-frame-wrap">
+          <div class="media-frame" aria-hidden="true">
+            <div class="frame-label">
+              <span class="frame-client">Workday</span>
+              <span class="frame-year">2026</span>
+            </div>
           </div>
         </div>
-        <span class="prod-index" aria-hidden="true">03</span>
+        <div class="work-meta">
+          <h3 class="work-client">Workday</h3>
+          <div class="work-tags">
+            <span>2026</span>
+            <span class="tag-sep" aria-hidden="true">&middot;</span>
+            <span>Generative Film</span>
+            <span class="tag-sep" aria-hidden="true">&middot;</span>
+            <span>Enterprise</span>
+          </div>
+          <p class="work-desc">Finance and HR &mdash; human capital at scale</p>
+          <span class="work-status">In Production</span>
+        </div>
       </article>
 
-      <article class="production" aria-label="ServiceNow — IT operations reimagined">
-        <div class="prod-bg prod-bg--servicenow" aria-hidden="true"></div>
-        <div class="prod-vignette"               aria-hidden="true"></div>
-        <div class="prod-body">
-          <div class="prod-meta">
-            <span class="prod-year">2026</span>
-            <span class="prod-format">Generative Film &middot; Enterprise</span>
-          </div>
-          <div class="prod-title">
-            <h3 class="prod-client">ServiceNow</h3>
-            <p class="prod-desc">Digital workflow &mdash; IT operations reimagined</p>
+      <article class="work-row" aria-label="ServiceNow — IT operations reimagined">
+        <div class="work-frame-wrap">
+          <div class="media-frame" aria-hidden="true">
+            <div class="frame-label">
+              <span class="frame-client">ServiceNow</span>
+              <span class="frame-year">2026</span>
+            </div>
           </div>
         </div>
-        <span class="prod-index" aria-hidden="true">04</span>
+        <div class="work-meta">
+          <h3 class="work-client">ServiceNow</h3>
+          <div class="work-tags">
+            <span>2026</span>
+            <span class="tag-sep" aria-hidden="true">&middot;</span>
+            <span>Generative Film</span>
+            <span class="tag-sep" aria-hidden="true">&middot;</span>
+            <span>Enterprise</span>
+          </div>
+          <p class="work-desc">Digital workflow &mdash; IT operations reimagined</p>
+          <span class="work-status">In Production</span>
+        </div>
       </article>
 
     </div>
   </section>
 
-  <!-- ============================================================
-       THE APPROACH — Chapter-title format
-  ============================================================ -->
+  <!-- THE APPROACH -->
   <section id="approach" aria-labelledby="approach-headline">
     <div class="container">
-      <div class="approach-head">
+      <div class="section-head">
         <span class="eyebrow">The Approach</span>
-        <h2 id="approach-headline" class="approach-headline">How we build.</h2>
-        <p class="approach-sub">Five phases. Deliberate. Repeatable.</p>
+        <h2 id="approach-headline" class="section-headline">How we build.</h2>
+        <p class="section-sub">Five phases. Deliberate. Repeatable.</p>
       </div>
-      <ol class="chapters" aria-label="Our five-phase process">
-        <li class="chapter">
-          <span class="chapter-num">01</span>
-          <h3 class="chapter-title">Research the market</h3>
+      <ol class="approach-steps" aria-label="Our five-phase process">
+        <li class="approach-step">
+          <span class="step-num">01</span>
+          <span class="step-title">Research the market</span>
         </li>
-        <li class="chapter">
-          <span class="chapter-num">02</span>
-          <h3 class="chapter-title">Write the script</h3>
+        <li class="approach-step">
+          <span class="step-num">02</span>
+          <span class="step-title">Write the script</span>
         </li>
-        <li class="chapter">
-          <span class="chapter-num">03</span>
-          <h3 class="chapter-title">Build the visual language</h3>
+        <li class="approach-step">
+          <span class="step-num">03</span>
+          <span class="step-title">Build the visual language</span>
         </li>
-        <li class="chapter">
-          <span class="chapter-num">04</span>
-          <h3 class="chapter-title">Render the world</h3>
+        <li class="approach-step">
+          <span class="step-num">04</span>
+          <span class="step-title">Render the world</span>
         </li>
-        <li class="chapter">
-          <span class="chapter-num">05</span>
-          <h3 class="chapter-title">Edit, score, deliver</h3>
+        <li class="approach-step">
+          <span class="step-num">05</span>
+          <span class="step-title">Edit, score, deliver</span>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- ============================================================
-       ABOUT — Manifesto title card
-  ============================================================ -->
+  <!-- ABOUT -->
   <section id="about" aria-label="About Badge 8">
-    <div class="about-stage">
-      <div class="about-rule" aria-hidden="true"></div>
+    <div class="container">
       <p class="about-statement">
-        We build films for companies that need their products understood &mdash;
-        quickly, clearly, and at the pace business actually moves.
-        No crews. No schedules. No disruption.
+        We build films for companies that need their products understood&mdash;quickly, clearly,
+        and at the pace business actually moves. No crews. No schedules. No disruption.
         We work like a teammate who never goes home.
       </p>
-      <div class="about-rule" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CONTACT — Quiet final frame
-  ============================================================ -->
+  <!-- CONTACT -->
   <section id="contact" aria-labelledby="contact-headline">
-    <div class="contact-stage">
+    <div class="contact-inner">
       <span class="eyebrow">Contact</span>
-      <h2 id="contact-headline" class="contact-headline">Start a conversation.</h2>
+      <h2 id="contact-headline" class="section-headline">Start a conversation.</h2>
       <p class="contact-sub">
         Tell us what you are trying to communicate.<br>
         We will show you what it could look like.
       </p>
       <form id="contact-form" class="contact-form" novalidate>
-        <div class="form-field">
-          <label for="email" class="form-label">Email address</label>
+        <label for="email" class="form-label">Email address</label>
+        <div class="form-row">
           <input
             type="email"
             id="email"
@@ -282,19 +289,16 @@
             aria-required="true"
             aria-describedby="form-confirm"
           >
+          <button type="submit" class="btn btn-primary">Send</button>
         </div>
-        <button type="submit" class="btn btn-foil">Send</button>
         <p id="form-confirm" class="form-confirm" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER — End credits
-  ============================================================ -->
+  <!-- FOOTER -->
   <footer id="footer" role="contentinfo">
-    <div class="footer-rule" aria-hidden="true"></div>
-    <div class="container footer-inner">
+    <div class="footer-inner container">
       <span class="footer-left">&infin;&ensp;Badge 8 &mdash; Est. 2026</span>
       <span class="footer-right">The best employee you never had.</span>
     </div>

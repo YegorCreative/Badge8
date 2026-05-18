@@ -1,136 +1,122 @@
-/* ============================================================
-   Badge 8 — responsive.css
-   All media queries and device-capability rules.
-   Loaded after css/styles.css in index.html.
-   ============================================================ */
+/* ================================================================
+   BADGE 8 — RESPONSIVE
+   Direction B: The Studio Floor
+   ================================================================ */
 
-/* ---- Touch devices: always reveal production description --- */
 
-@media (hover: none) {
-  .prod-desc {
-    opacity: 1;
-    transform: translateY(0);
+/* ── 1100px — narrow desktop ──────────────────────────────────── */
+@media (max-width: 1100px) {
+  .work-row {
+    gap: 40px;
   }
-  .prod-meta { opacity: 0.8; }
 }
 
-/* ---- Tablet (≤1000px) ------------------------------------- */
 
-@media (max-width: 1000px) {
-  :root {
-    --pad: 40px;
-    --section-v: 120px;
-  }
-
-  .prod-body { padding: 24px 44px 36px; }
-  .prod-index { right: 40px; }
-  .production { height: 360px; }
-
-  /* Services: collapse to 2-column */
+/* ── 900px — tablet landscape ──────────────────────────────── */
+@media (max-width: 900px) {
   .service-row {
-    grid-template-columns: 44px 1fr;
-    column-gap: 28px;
+    grid-template-columns: 56px 180px 1fr;
   }
-
-  .service-desc {
-    grid-column: 2;
-    text-align: left;
-    padding-top: 12px;
+  .work-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 48px 0;
   }
+}
 
-  /* Problem: collapse to single column */
+
+/* ── 760px — tablet portrait / large mobile ──────────────────── */
+@media (max-width: 760px) {
+
+  /* Hero: stack media above content */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding-top: 80px;
+    padding-bottom: 56px;
+    gap: 40px;
+  }
+  .hero-media { order: -1; }
+
+  /* Problem: stack */
   .problem-inner {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .problem-right { padding-top: 0; }
-}
+  .problem-right p { max-width: 100%; }
 
-/* ---- Mobile (≤720px) -------------------------------------- */
-
-@media (max-width: 720px) {
-  :root {
-    --section-v: 96px;
-    --pad: 24px;
-  }
-
-  /* Nav */
-  .nav-inner {
-    height: auto;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .nav-links { gap: 20px; flex-wrap: wrap; }
-
-  /* Hide nav CTA on mobile — contact section handles it */
-  .nav-links .nav-cta { display: none; }
-
-  /* Hero */
-  .hero-metadata { display: none; }
-
-  .hero-headline { font-size: clamp(3.2rem, 11vw, 5rem); }
-
-  .hero-lower {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 36px;
-  }
-
-  .hero-ctas { flex-direction: column; width: 100%; }
-  .hero-ctas .btn { text-align: center; width: 100%; }
-  .hero-aspect { display: none; }
-
-  /* Problem */
-  .problem-headline { font-size: clamp(1.8rem, 6.5vw, 2.8rem); }
-
-  /* Services */
-  .services-head { margin-bottom: 56px; }
+  /* Services: num + title/desc in two columns */
   .service-row {
-    grid-template-columns: 36px 1fr;
-    column-gap: 20px;
-    padding: 36px 0;
+    grid-template-columns: 56px 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px 24px;
+    align-items: start;
   }
-  .service-desc {
-    grid-column: 2;
-    text-align: left;
-    padding-top: 10px;
-  }
-  .service-title { font-size: 1.25rem; }
+  .service-title { grid-column: 2; grid-row: 1; }
+  .service-desc  { grid-column: 2; grid-row: 2; }
+  .service-num   { grid-column: 1; grid-row: 1; padding-top: 4px; }
 
-  /* Work */
-  .work-header { padding-bottom: 48px; }
-  .production { height: 300px; }
-  .prod-body { padding: 18px 24px 28px; }
-  .prod-client { font-size: clamp(2.2rem, 8vw, 3.5rem); }
-  .prod-index { display: none; }
+  /* Work: stack frame above meta */
+  .work-row {
+    grid-template-columns: 1fr;
+    padding: 40px 0;
+    gap: 24px;
+  }
+  .work-meta { padding-top: 0; }
 
   /* Approach */
-  .approach-head { margin-bottom: 52px; }
-  .chapter { grid-template-columns: 52px 1fr; padding: 30px 0; }
-  .chapter-title { font-size: 1.25rem; }
-
-  /* About */
-  #about { padding: 96px 0; }
-  .about-rule { height: 48px; }
-
-  /* Contact */
-  .contact-stage { text-align: left; }
-  .form-field input[type="email"] { text-align: left; }
-  .contact-form { align-items: flex-start; }
-  .form-field { max-width: 100%; }
-  .contact-form .btn { width: 100%; text-align: center; }
-
-  /* Footer */
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .approach-step {
+    grid-template-columns: 48px 1fr;
+    gap: 0 20px;
+  }
 }
 
-/* ---- Small phones (≤480px) -------------------------------- */
 
-@media (max-width: 480px) {
-  .production { height: 260px; }
-  .prod-desc { display: none; }
-  .hero-headline { font-size: clamp(2.8rem, 13vw, 4rem); }
+/* ── 520px — mobile ───────────────────────────────────────────── */
+@media (max-width: 520px) {
+
+  :root {
+    --section-v: clamp(56px, 12vw, 96px);
+    --gutter: 20px;
+  }
+
+  /* Nav: keep only CTA link */
+  .nav-links li:not(:last-child) { display: none; }
+
+  /* Proof strip: vertical */
+  .proof-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .proof-list li {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+    padding: 14px 0;
+  }
+  .proof-list li:last-child { border-bottom: none; }
+
+  /* Services: single column */
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 20px 0;
+  }
+  .service-num   { grid-column: 1; grid-row: 1; }
+  .service-title { grid-column: 1; grid-row: 2; }
+  .service-desc  { grid-column: 1; grid-row: 3; }
+
+  /* Form: stack */
+  .form-row { flex-direction: column; max-width: 100%; }
+  .contact-form input[type="email"] {
+    border-right: 1px solid var(--border-mid);
+    border-bottom: none;
+  }
+  .contact-form .btn-primary { width: 100%; text-align: center; }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
 }
