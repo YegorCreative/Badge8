@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="s-blur-xl" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+    <filter id="s-blur-md" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- Base: deep steel-black -->
+  <rect width="1200" height="450" fill="#060a0e"/>
+
+  <!-- Cool steel-blue — upper right (overhead ops-centre lighting) -->
+  <ellipse cx="1090" cy="75"  rx="490" ry="330" fill="#2d4468" opacity="0.58" filter="url(#s-blur-xl)"/>
+  <ellipse cx="920"  cy="150" rx="270" ry="185" fill="#3a5880" opacity="0.26" filter="url(#s-blur-xl)"/>
+
+  <!-- Dark teal — lower left (ambient spill) -->
+  <ellipse cx="110" cy="390" rx="380" ry="270" fill="#1c2c3c" opacity="0.50" filter="url(#s-blur-xl)"/>
+  <ellipse cx="230" cy="340" rx="180" ry="120" fill="#223848" opacity="0.20" filter="url(#s-blur-md)"/>
+
+  <!-- Mid cool accent — central depth -->
+  <ellipse cx="580" cy="300" rx="300" ry="165" fill="#1e3248" opacity="0.20" filter="url(#s-blur-xl)"/>
+
+  <!-- Operations monitor scan lines — horizontal infrastructure references -->
+  <rect x="0" y="150" width="1200" height="1" fill="#f5f1ea" opacity="0.030"/>
+  <rect x="0" y="225" width="1200" height="1" fill="#f5f1ea" opacity="0.025"/>
+  <rect x="0" y="300" width="1200" height="1" fill="#f5f1ea" opacity="0.030"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="w-blur-xl" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+    <filter id="w-blur-md" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- Base: warm midnight -->
+  <rect width="1200" height="450" fill="#0c0a06"/>
+
+  <!-- Warm gold — lower left (interior / lobby light) -->
+  <ellipse cx="90"  cy="390" rx="420" ry="275" fill="#7a5008" opacity="0.54" filter="url(#w-blur-xl)"/>
+  <ellipse cx="250" cy="340" rx="210" ry="145" fill="#a87020" opacity="0.24" filter="url(#w-blur-xl)"/>
+  <ellipse cx="160" cy="410" rx="100" ry="65"  fill="#c08820" opacity="0.16" filter="url(#w-blur-md)"/>
+
+  <!-- Cool steel-blue — upper right (floor-to-ceiling glass / sky) -->
+  <ellipse cx="1110" cy="55"  rx="400" ry="295" fill="#263454" opacity="0.48" filter="url(#w-blur-xl)"/>
+  <ellipse cx="970"  cy="115" rx="210" ry="155" fill="#3a4e72" opacity="0.24" filter="url(#w-blur-xl)"/>
+
+  <!-- Floor-to-ceiling glass curtain wall — vertical mullions -->
+  <rect x="380" y="0" width="1" height="450" fill="#f5f1ea" opacity="0.040"/>
+  <rect x="580" y="0" width="1" height="450" fill="#f5f1ea" opacity="0.030"/>
+  <rect x="780" y="0" width="1" height="450" fill="#f5f1ea" opacity="0.040"/>
+</svg>

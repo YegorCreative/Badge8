@@ -57,7 +57,7 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.24'/%3E%3C/svg%3E");
   background-size: 240px 240px;
   mix-blend-mode: screen;
-  opacity: 0.09;
+  opacity: 0.07;
   pointer-events: none;
   z-index: 9999;
 }
@@ -243,11 +243,11 @@ body::after {
   z-index: 0;
 }
 
-/* Base: deep warm-black */
+/* Base: deep warm-black + cinematic placeholder until hero.jpg lands */
 .hero-atmo-base {
   position: absolute;
   inset: 0;
-  background-color: #050404;
+  background: url('../images/hero-placeholder.svg') center / cover #050404;
 }
 
 /* Practical warm light: low left, like a floor lamp or industrial amber */
@@ -638,7 +638,8 @@ body::after {
   background:
     radial-gradient(ellipse 80% 70% at 8%  85%, rgba(155, 68, 12, 0.52) 0%, transparent 58%),
     radial-gradient(ellipse 50% 45% at 75% 20%, rgba(70, 50, 28, 0.22) 0%, transparent 62%),
-    linear-gradient(155deg, #1c0e04 0%, #0d0b08 30%, #080808 65%, #060809 100%);
+    linear-gradient(155deg, rgba(28, 14, 4, 0.82) 0%, rgba(13, 11, 8, 0.88) 30%, rgba(8, 8, 8, 0.92) 65%, rgba(6, 8, 9, 0.90) 100%),
+    url('../images/work-epicor-placeholder.svg') center / cover;
 }
 
 /* Infor — deep indigo enterprise. Control rooms, server halls. */
@@ -646,7 +647,8 @@ body::after {
   background:
     radial-gradient(ellipse 65% 70% at 88% 80%, rgba(24, 44, 88, 0.58) 0%, transparent 58%),
     radial-gradient(ellipse 42% 38% at 18% 22%, rgba(45, 35, 65, 0.28) 0%, transparent 60%),
-    linear-gradient(155deg, #060810 0%, #09090d 35%, #090808 65%, #0d0808 100%);
+    linear-gradient(155deg, rgba(6, 8, 16, 0.84) 0%, rgba(9, 9, 13, 0.88) 35%, rgba(9, 8, 8, 0.90) 65%, rgba(13, 8, 8, 0.88) 100%),
+    url('../images/work-infor-placeholder.svg') center / cover;
 }
 
 /* Workday — midnight blue + warm gold. Executive towers, finance. */
@@ -654,7 +656,8 @@ body::after {
   background:
     radial-gradient(ellipse 70% 60% at 12% 55%, rgba(135, 88, 25, 0.38) 0%, transparent 58%),
     radial-gradient(ellipse 55% 52% at 88% 30%, rgba(38, 52, 80, 0.34) 0%, transparent 60%),
-    linear-gradient(155deg, #0e0b06 0%, #0a0a0a 38%, #08090d 75%, #080808 100%);
+    linear-gradient(155deg, rgba(14, 11, 6, 0.84) 0%, rgba(10, 10, 10, 0.88) 38%, rgba(8, 9, 13, 0.90) 75%, rgba(8, 8, 8, 0.88) 100%),
+    url('../images/work-workday-placeholder.svg') center / cover;
 }
 
 /* ServiceNow — cool steel. Digital operations, glass-and-steel offices. */
@@ -662,7 +665,8 @@ body::after {
   background:
     radial-gradient(ellipse 60% 65% at 85% 18%, rgba(45, 68, 108, 0.48) 0%, transparent 60%),
     radial-gradient(ellipse 42% 44% at 22% 88%, rgba(28, 38, 52, 0.35) 0%, transparent 58%),
-    linear-gradient(155deg, #060a0e 0%, #09090b 38%, #0a0808 70%, #080808 100%);
+    linear-gradient(155deg, rgba(6, 10, 14, 0.84) 0%, rgba(9, 9, 11, 0.88) 38%, rgba(10, 8, 8, 0.90) 70%, rgba(8, 8, 8, 0.88) 100%),
+    url('../images/work-servicenow-placeholder.svg') center / cover;
 }
 
 /* Deep cinematic vignette on each panel */
