@@ -647,6 +647,7 @@ body {
   letter-spacing: 0.02em;
   padding: 0 0 16px;
   -webkit-appearance: none;
+  appearance: none;
   border-radius: 0;
 }
 
