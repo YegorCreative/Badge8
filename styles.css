@@ -1,6 +1,6 @@
 /* ============================================================
    Badge 8 — styles.css
-   Premium cinematic landing page
+   Cinematic editorial / enterprise-grade
    ============================================================ */
 
 /* --- Reset ---------------------------------------- */
@@ -14,30 +14,29 @@
 /* --- Design Tokens -------------------------------- */
 
 :root {
-  --bg:          #0a0a0a;
-  --bg-2:        #0d0d0d;
-  --text:        #f5f1ea;
-  --muted:       #a8a39b;
-  --dim:         #7a756d;
-  --faint:       #5a554e;
-  --copper:      #d97c3f;
-  --border:      rgba(245, 241, 234, 0.08);
-  --border-hover: rgba(245, 241, 234, 0.16);
+  --bg:           #0a0a0a;
+  --bg-2:         #0d0d0d;
+  --text:         #f5f1ea;
+  --muted:        #a8a39b;
+  --dim:          #7a756d;
+  --faint:        #5a554e;
+  --copper:       #d97c3f;
+  --border:       rgba(245, 241, 234, 0.07);
+  --border-soft:  rgba(245, 241, 234, 0.14);
 
-  --font-head:   'Cinzel', Georgia, serif;
-  --font-body:   Georgia, 'Times New Roman', serif;
-  --font-ui:     'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-head:    'Cinzel', Georgia, serif;
+  --font-body:    Georgia, 'Times New Roman', serif;
+  --font-ui:      'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  --section-padding: 120px;
-  --container-max:   1120px;
-  --container-pad:   40px;
+  --section-v:    130px;
+  --container-w:  1120px;
+  --pad:          44px;
 }
 
 /* --- Base ----------------------------------------- */
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {

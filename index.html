@@ -27,6 +27,7 @@
 
   <!-- Hero -->
   <section id="hero" aria-labelledby="hero-headline">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
     <div class="container hero-inner">
       <span class="eyebrow">A Cinematic Film Studio</span>
       <h1 id="hero-headline" class="hero-headline">The best employee<br>you never had.</h1>
@@ -36,14 +37,21 @@
         <a href="#work" class="btn btn-ghost">See the work</a>
       </div>
     </div>
+    <span class="hero-aspect" aria-hidden="true">2.39 : 1</span>
   </section>
 
   <!-- The Problem -->
   <section id="problem" aria-labelledby="problem-headline">
     <div class="container">
-      <h2 id="problem-headline" class="section-headline">Your product moves industries.<br>But explaining what it does &mdash; that&rsquo;s the hard part.</h2>
-      <p class="section-body">Your reps know the product. Your prospects do not. Traditional production slows teams down, interrupts operations, and ships too slowly for modern enterprise pace.</p>
-      <p class="section-body section-body--italic">There is a better way to tell the story.</p>
+      <div class="problem-layout">
+        <div class="problem-head">
+          <h2 id="problem-headline" class="section-headline">Your product moves industries.<br>But explaining what it does &mdash; that&rsquo;s the hard part.</h2>
+        </div>
+        <div class="problem-body">
+          <p class="section-body">Your reps know the product. Your prospects do not. Traditional production slows teams down, interrupts operations, and ships too slowly for modern enterprise pace.</p>
+          <p class="section-body section-body--italic">There is a better way to tell the story.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -81,30 +89,59 @@
     <div class="container">
       <span id="work-label" class="eyebrow">Selected Work</span>
       <div class="work-grid">
+
         <div class="work-tile">
+          <span class="work-grain" aria-hidden="true"></span>
+          <div class="work-tile-meta">
+            <span class="work-year">2025</span>
+            <span class="work-format">Generative Film</span>
+          </div>
           <div class="work-tile-inner">
             <span class="work-status">Enterprise</span>
             <h3 class="work-client">Epicor</h3>
+            <p class="work-desc">Manufacturing intelligence &mdash; global supply chain narrative</p>
           </div>
         </div>
+
         <div class="work-tile">
+          <span class="work-grain" aria-hidden="true"></span>
+          <div class="work-tile-meta">
+            <span class="work-year">2025</span>
+            <span class="work-format">Generative Film</span>
+          </div>
           <div class="work-tile-inner">
             <span class="work-status">Enterprise</span>
             <h3 class="work-client">Infor</h3>
+            <p class="work-desc">Industry cloud &mdash; enterprise platform identity</p>
           </div>
         </div>
+
         <div class="work-tile">
+          <span class="work-grain" aria-hidden="true"></span>
+          <div class="work-tile-meta">
+            <span class="work-year">2026</span>
+            <span class="work-format">Generative Film</span>
+          </div>
           <div class="work-tile-inner">
             <span class="work-status">Enterprise</span>
             <h3 class="work-client">Workday</h3>
+            <p class="work-desc">Finance and HR &mdash; human capital at scale</p>
           </div>
         </div>
+
         <div class="work-tile">
+          <span class="work-grain" aria-hidden="true"></span>
+          <div class="work-tile-meta">
+            <span class="work-year">2026</span>
+            <span class="work-format">Generative Film</span>
+          </div>
           <div class="work-tile-inner">
             <span class="work-status">Enterprise</span>
             <h3 class="work-client">ServiceNow</h3>
+            <p class="work-desc">Digital workflow &mdash; IT operations reimagined</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -153,20 +190,20 @@
       <h2 id="contact-headline" class="section-headline">Start a conversation.</h2>
       <p class="section-body">Tell us what you are trying to communicate.<br>We will show you what it could look like.</p>
       <form id="contact-form" class="contact-form" novalidate>
-        <div class="form-row">
-          <label for="email" class="visually-hidden">Your email address</label>
+        <div class="form-field">
+          <label for="email" class="form-label">Email address</label>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="Your email address"
+            placeholder="you@company.com"
             autocomplete="email"
             required
             aria-required="true"
             aria-describedby="form-confirm"
           >
-          <button type="submit" class="btn btn-primary">Send</button>
         </div>
+        <button type="submit" class="btn btn-primary">Send</button>
         <p id="form-confirm" class="form-confirm" role="status" aria-live="polite"></p>
       </form>
     </div>
