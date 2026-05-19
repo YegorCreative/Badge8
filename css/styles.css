@@ -367,18 +367,40 @@ body {
   opacity: 0.22;
 }
 
-/* Per-project cinematic fills — distinct light tones, not gray */
-/* Hero frame: neutral, architectural — no tint, no decoration */
+/* Per-project cinematic fills */
+/* Hero frame: neutral, architectural */
 .media-frame--hero {
   background-color: #EDEEF0;
   border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 4px;
 }
 .media-frame--hero::before { content: none; }
-.media-frame--epicor     { background-color: #EDEEF0; }
-.media-frame--infor      { background-color: #EEEDF0; }
-.media-frame--workday    { background-color: #F0EDEB; }
-.media-frame--servicenow { background-color: #EDEDF0; }
+
+/* Work frames: dark cinematic atmospheres — directional key light from upper-right */
+.media-frame--epicor {
+  background:
+    radial-gradient(ellipse 75% 55% at 72% 26%, rgba(155, 118, 68, 0.30) 0%, transparent 58%),
+    radial-gradient(ellipse 55% 70% at 18% 82%, rgba(18, 13, 8, 0.72) 0%, transparent 52%),
+    linear-gradient(162deg, #26201A 0%, #181310 42%, #0C0906 100%);
+}
+.media-frame--infor {
+  background:
+    radial-gradient(ellipse 68% 50% at 66% 22%, rgba(65, 118, 175, 0.26) 0%, transparent 56%),
+    radial-gradient(ellipse 48% 64% at 14% 74%, rgba(8, 18, 48, 0.68) 0%, transparent 50%),
+    linear-gradient(158deg, #0B1626 0%, #071020 42%, #040812 100%);
+}
+.media-frame--workday {
+  background:
+    radial-gradient(ellipse 82% 52% at 62% 20%, rgba(208, 192, 162, 0.20) 0%, transparent 62%),
+    radial-gradient(ellipse 44% 66% at 11% 78%, rgba(22, 18, 12, 0.68) 0%, transparent 53%),
+    linear-gradient(168deg, #1E1A12 0%, #14100A 40%, #0A0806 100%);
+}
+.media-frame--servicenow {
+  background:
+    radial-gradient(ellipse 64% 52% at 68% 30%, rgba(85, 118, 162, 0.24) 0%, transparent 56%),
+    radial-gradient(ellipse 48% 62% at 20% 74%, rgba(8, 12, 24, 0.70) 0%, transparent 50%),
+    linear-gradient(163deg, #0E1320 0%, #0A0E18 42%, #060810 100%);
+}
 
 
 /* ── 9. PROOF STRIP ────────────────────────────────────────────── */
@@ -607,6 +629,53 @@ body {
   font-weight: 400;
   letter-spacing: 0.04em;
   color: var(--ink-3);
+}
+
+/* ---- Work frame: cinematic image layer ---- */
+.frame-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(18%) contrast(1.06) brightness(0.85);
+  transition: transform 0.6s ease, filter 0.6s ease;
+  z-index: 0;
+}
+
+/* Vignette overlay — sits above img, below label */
+.frame-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 110% 110% at 50% 50%, transparent 25%, rgba(0, 0, 0, 0.52) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Frame labels above overlay in work frames */
+.work-frame-wrap .frame-label { z-index: 2; }
+
+/* Label colors: white on dark cinematic backgrounds */
+.work-frame-wrap .frame-client {
+  color: rgba(255, 255, 255, 0.62);
+  opacity: 1;
+}
+.work-frame-wrap .frame-year {
+  color: rgba(255, 255, 255, 0.38);
+  opacity: 1;
+}
+
+/* Hover: barely perceptible scale + sharpened contrast */
+.work-frame-wrap {
+  transition: box-shadow 0.4s ease;
+}
+.work-frame-wrap:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+}
+.work-frame-wrap:hover .frame-img {
+  transform: scale(1.01);
+  filter: grayscale(10%) contrast(1.10) brightness(0.88);
 }
 
 
