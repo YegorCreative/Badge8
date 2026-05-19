@@ -67,18 +67,21 @@
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.intersectionRatio >= 0.6) {
+        if (entry.intersectionRatio >= 0.7) {
           var playPromise = video.play();
           if (playPromise !== undefined) {
-            playPromise.catch(function () {
+            playPromise.then(function () {
+              reel.classList.add('video-playing');
+            }).catch(function () {
               // Suppress blocked autoplay errors
             });
           }
         } else {
           video.pause();
+          reel.classList.remove('video-playing');
         }
       });
-    }, { threshold: [0, 0.6, 1] });
+    }, { threshold: [0, 0.7, 1] });
 
     observer.observe(reel);
   } else if (video && reduceMotion) {

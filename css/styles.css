@@ -126,7 +126,7 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--duration-fast) var(--ease-standard);
 }
 .btn-primary:hover {
   background-color: var(--ink-2);
@@ -146,15 +146,17 @@ body {
   border: none;
   border-radius: 0;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color var(--duration-fast) var(--ease-standard);
 }
 .btn-ghost::after {
   content: '\2192';
+  display: inline-block;
   font-style: normal;
-  transition: transform 0.25s ease;
+  will-change: transform;
+  transition: transform var(--duration-fast) var(--ease-standard);
 }
 .btn-ghost:hover { color: var(--ink); }
-.btn-ghost:hover::after { transform: translateX(4px); }
+.btn-ghost:hover::after { transform: translateX(1.5px); }
 
 
 /* ── 6. NAV ──────────────────────────────────────────────────────── */
@@ -162,11 +164,11 @@ body {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.82);
+  background-color: rgba(255, 255, 255, 0.80);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--border);
-  transition: background-color 0.3s ease;
+  transition: background-color var(--duration-medium) var(--ease-standard), border-color var(--duration-medium) var(--ease-standard);
 }
 
 .nav-inner {
@@ -198,7 +200,7 @@ body {
   font-size: 13px;
   font-weight: 400;
   color: var(--ink-3);
-  transition: color 0.2s;
+  transition: color var(--duration-fast) var(--ease-standard);
 }
 
 .nav-links a:hover { color: var(--ink); }
@@ -211,7 +213,7 @@ body {
   color: #FFFFFF !important;
   font-size: 12px;
   border-radius: 4px;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--duration-fast) var(--ease-standard);
 }
 .nav-cta:hover { background-color: var(--ink-2) !important; }
 
@@ -230,7 +232,8 @@ body {
 
 /* scrolled state — same appearance, JS adds class */
 #nav.scrolled {
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: rgba(255, 255, 255, 0.90);
+  border-bottom-color: var(--border-mid);
 }
 
 
@@ -500,7 +503,10 @@ body {
   overflow: hidden;
   display: flex;
   align-items: center;
-  background: #F5F5F7;
+  background-color: var(--mist);
+  background-image: url('../images/reel-poster.webp');
+  background-size: cover;
+  background-position: center;
   border-top: 1px solid var(--border);
 }
 
@@ -521,6 +527,13 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity var(--duration-slow) var(--ease-standard);
+}
+
+.reel-section.video-playing .reel-video {
+  opacity: 1;
 }
 
 .reel-overlay {
@@ -722,7 +735,8 @@ body {
   object-fit: cover;
   object-position: center;
   filter: grayscale(6%) contrast(1.01) brightness(0.94);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, filter;
+  transition: transform var(--duration-slow) var(--ease-standard), filter var(--duration-slow) var(--ease-standard);
   z-index: 0;
 }
 
@@ -753,7 +767,7 @@ body {
 
 /* Hover: barely perceptible scale for extreme restraint */
 .work-frame-wrap:hover .frame-img {
-  transform: scale(1.001);
+  transform: scale(1.0005) translate3d(0, 0, 0);
   filter: grayscale(0%) contrast(1.02) brightness(0.96);
 }
 
