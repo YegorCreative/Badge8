@@ -345,6 +345,7 @@ body {
   color: var(--ink);
   opacity: 0.22;
   letter-spacing: 0.02em;
+  transition: opacity var(--duration-medium) var(--ease-standard);
 }
 
 /* .frame-wordmark — hero frame: operational Inter, small-caps style */
@@ -357,6 +358,7 @@ body {
   text-transform: uppercase;
   color: var(--ink);
   opacity: 0.18;
+  transition: opacity var(--duration-medium) var(--ease-standard);
 }
 
 /* .frame-est matches hero HTML; .frame-year matches work HTML */
@@ -368,6 +370,7 @@ body {
   text-transform: uppercase;
   color: var(--ink);
   opacity: 0.16;
+  transition: opacity var(--duration-medium) var(--ease-standard);
 }
 
 .frame-ratio {
@@ -883,6 +886,10 @@ body {
   border-radius: 4px;
   overflow: hidden;
   background: var(--white);
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+.form-row:focus-within {
+  border-color: var(--ink-3);
 }
 
 .contact-form input[type="email"] {
