@@ -27,11 +27,17 @@
 
   .hero-inner {
     grid-template-columns: 1fr;
-    padding-top: 80px;
-    padding-bottom: 56px;
+    min-height: unset;
+    /* nav offset + breathing room, single column */
+    padding-top: calc(52px + 48px);
+    padding-bottom: 48px;
     gap: 40px;
   }
-  .hero-media { order: -1; }
+  .hero-media {
+    order: -1;
+    max-width: 100%;
+    margin-left: 0;
+  }
 
   .proof-list { flex-wrap: wrap; }
 
