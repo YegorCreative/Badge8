@@ -56,4 +56,37 @@
     });
   }
 
+  // --- Scroll-aware video autoplay with IntersectionObserver ---
+
+  var videos = document.querySelectorAll('.scroll-video');
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (videos.length > 0 && !prefersReducedMotion) {
+    var videoObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var video = entry.target;
+
+        if (entry.isIntersecting) {
+          var playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(function () {
+              // Suppress blocked autoplay errors
+            });
+          }
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.45 });
+
+    videos.forEach(function (video) {
+      videoObserver.observe(video);
+    });
+  } else if (prefersReducedMotion) {
+    // If reduced motion is preferred, ensure video remains paused
+    videos.forEach(function (video) {
+      video.pause();
+    });
+  }
+
 })();
