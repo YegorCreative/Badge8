@@ -167,7 +167,7 @@ body {
   background-color: rgba(255, 255, 255, 0.80);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid transparent;
   transition: background-color var(--duration-medium) var(--ease-standard), border-color var(--duration-medium) var(--ease-standard);
 }
 
@@ -510,7 +510,6 @@ body {
   background-image: url('../images/reel-poster.webp');
   background-size: cover;
   background-position: center;
-  border-top: 1px solid var(--border);
 }
 
 .reel-section::before {
