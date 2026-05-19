@@ -47,9 +47,16 @@
   }
   .problem-right p { max-width: 100%; }
 
-  .reel-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .reel-section {
+    min-height: 72vh;
+  }
+  .reel-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.88) 50%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
   }
   .reel-copy {
     max-width: 100%;
