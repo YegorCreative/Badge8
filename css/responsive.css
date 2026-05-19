@@ -19,6 +19,14 @@
     gap: 32px;
     padding: 48px var(--gutter);
   }
+  .how-it-works-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .why-choose-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 
@@ -149,5 +157,18 @@
     flex-direction: column;
     gap: 8px;
     text-align: center;
+  }
+  .how-it-works-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 32px;
+  }
+  .deliverables-table-wrap {
+    margin: 0 calc(-1 * var(--gutter));
+    padding: 0 var(--gutter);
+  }
+  .value-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
