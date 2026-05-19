@@ -95,7 +95,9 @@
 @media (max-width: 520px) {
 
   :root {
-    --section-v: clamp(56px, 12vw, 96px);
+    --section-hero: clamp(64px, 10vw, 100px);
+    --section-editorial: clamp(56px, 8vw, 80px);
+    --section-compact: clamp(40px, 6vw, 56px);
     --gutter: 20px;
   }
 
