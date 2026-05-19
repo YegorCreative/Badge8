@@ -653,8 +653,11 @@ body {
   pointer-events: none;
 }
 
-/* Frame labels above overlay in work frames */
-.work-frame-wrap .frame-label { z-index: 2; }
+/* Frame labels and ratio above atmospheric image layers */
+.media-frame .frame-label,
+.media-frame .frame-ratio {
+  z-index: 2;
+}
 
 /* Label colors: white on dark cinematic backgrounds */
 .work-frame-wrap .frame-client {
