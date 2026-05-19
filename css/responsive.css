@@ -17,7 +17,7 @@
   .work-row {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    padding: 48px 0;
+    padding: 48px var(--gutter);
   }
 }
 
@@ -59,7 +59,7 @@
 
   .work-row {
     grid-template-columns: 1fr;
-    padding: 40px 0;
+    padding: 40px var(--gutter);
     gap: 24px;
   }
   .work-meta { padding-top: 0; }
