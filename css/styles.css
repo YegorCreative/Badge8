@@ -29,8 +29,8 @@ ul, ol { list-style: none; }
   --brass-lit:    #D4A76A;
 
   /* Borders */
-  --border:       rgba(0, 0, 0, 0.08);
-  --border-mid:   rgba(0, 0, 0, 0.14);
+  --border:       rgba(0, 0, 0, 0.05);
+  --border-mid:   rgba(0, 0, 0, 0.08);
   --border-b:     rgba(184, 137, 77, 0.28);
 
   /* Typography */
@@ -88,6 +88,9 @@ body {
   letter-spacing: -0.025em;
   color: var(--ink);
 }
+.section-headline em {
+  font-style: normal;
+}
 
 .eyebrow {
   font-family: var(--font-ui);
@@ -112,13 +115,12 @@ body {
   font-weight: 400;
   letter-spacing: 0.04em;
   border: none;
-  border-radius: 980px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition: background-color 0.2s ease;
 }
 .btn-primary:hover {
   background-color: var(--ink-2);
-  transform: translateY(-1px);
 }
 
 .btn-ghost {
@@ -199,7 +201,7 @@ body {
   background-color: var(--ink);
   color: #FFFFFF !important;
   font-size: 12px;
-  border-radius: 980px;
+  border-radius: 4px;
   transition: background-color 0.2s ease;
 }
 .nav-cta:hover { background-color: var(--ink-2) !important; }
@@ -267,7 +269,7 @@ body {
 }
 
 .hero-headline em {
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }
 
@@ -305,7 +307,7 @@ body {
   width: 100%;
   aspect-ratio: 2.39 / 1;
   background-color: var(--mist);
-  border-radius: 12px;
+  border-radius: 4px;
   overflow: hidden;
   position: relative;
 }
@@ -468,7 +470,7 @@ body {
 }
 
 .problem-headline em {
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }
 
@@ -558,7 +560,6 @@ body {
 .work-frame-wrap {
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid var(--border);
 }
 
 /* ---- Work meta: briefing document hierarchy ---- */
@@ -639,8 +640,8 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(18%) contrast(1.06) brightness(0.85);
-  transition: transform 0.6s ease, filter 0.6s ease;
+  filter: grayscale(6%) contrast(1.01) brightness(0.94);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 0;
 }
 
@@ -648,7 +649,7 @@ body {
 .frame-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 110% 110% at 50% 50%, transparent 25%, rgba(0, 0, 0, 0.52) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.16) 0%, transparent 35%);
   z-index: 1;
   pointer-events: none;
 }
@@ -669,16 +670,10 @@ body {
   opacity: 1;
 }
 
-/* Hover: barely perceptible scale + sharpened contrast */
-.work-frame-wrap {
-  transition: box-shadow 0.4s ease;
-}
-.work-frame-wrap:hover {
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
-}
+/* Hover: barely perceptible scale for extreme restraint */
 .work-frame-wrap:hover .frame-img {
-  transform: scale(1.01);
-  filter: grayscale(10%) contrast(1.10) brightness(0.88);
+  transform: scale(1.003);
+  filter: grayscale(0%) contrast(1.02) brightness(0.96);
 }
 
 
@@ -748,45 +743,15 @@ body {
 
 /* .about-statement matches HTML — single editorial paragraph */
 .about-statement {
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
   font-weight: 300;
-  font-style: italic;
-  font-size: clamp(var(--text-xl), 2.8vw, 2.25rem);
-  line-height: 1.45;
-  letter-spacing: -0.015em;
+  font-style: normal;
+  font-size: clamp(var(--text-lg), 2vw, var(--text-xl));
+  line-height: 1.6;
+  letter-spacing: -0.01em;
   color: var(--ink-2);
   max-width: 800px;
 }
-
-.about-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.about-quote {
-  font-family: var(--font-display);
-  font-size: clamp(var(--text-2xl), 3.5vw, 2.625rem);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin-bottom: 32px;
-}
-
-.about-quote span { color: var(--brass); }
-
-.about-text {
-  font-family: var(--font-ui);
-  font-size: var(--text-base);
-  line-height: 1.75;
-  color: var(--ink-3);
-  margin-bottom: 16px;
-}
-
-.about-text:last-child { margin-bottom: 0; }
 
 
 /* ── 15. CONTACT ──────────────────────────────────────────────────── */
@@ -820,7 +785,7 @@ body {
   max-width: 480px;
   margin: 0 auto 16px;
   border: 1px solid var(--border-mid);
-  border-radius: 980px;
+  border-radius: 4px;
   overflow: hidden;
   background: var(--white);
 }
@@ -839,7 +804,7 @@ body {
 .contact-form input::placeholder { color: var(--ink-4); }
 
 .contact-form .btn-primary {
-  border-radius: 980px;
+  border-radius: 4px;
   margin: 4px;
   padding: 10px 20px;
   font-size: 13px;

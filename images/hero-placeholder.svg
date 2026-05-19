@@ -14,20 +14,20 @@
     </filter>
   </defs>
 
-  <!-- Base: obsidian -->
-  <rect width="1200" height="675" fill="#050404"/>
+  <!-- Base: slate/charcoal -->
+  <rect width="1200" height="675" fill="#121316"/>
 
   <!-- Warm amber practical — lower left (floor lamp / industrial) -->
-  <ellipse cx="80"  cy="620" rx="500" ry="320" fill="#7a2e08" opacity="0.62" filter="url(#h-blur-xl)"/>
-  <ellipse cx="210" cy="555" rx="260" ry="180" fill="#b83e10" opacity="0.30" filter="url(#h-blur-xl)"/>
-  <ellipse cx="150" cy="630" rx="110" ry="72"  fill="#d9580c" opacity="0.20" filter="url(#h-blur-md)"/>
+  <ellipse cx="80"  cy="620" rx="500" ry="320" fill="#7a2e08" opacity="0.20" filter="url(#h-blur-xl)"/>
+  <ellipse cx="210" cy="555" rx="260" ry="180" fill="#b83e10" opacity="0.10" filter="url(#h-blur-xl)"/>
+  <ellipse cx="150" cy="630" rx="110" ry="72"  fill="#d9580c" opacity="0.05" filter="url(#h-blur-md)"/>
 
   <!-- Cool steel-blue — upper right (window / sky light) -->
-  <ellipse cx="1110" cy="55"  rx="440" ry="310" fill="#233660" opacity="0.44" filter="url(#h-blur-xl)"/>
-  <ellipse cx="990"  cy="130" rx="220" ry="155" fill="#3a4e7e" opacity="0.22" filter="url(#h-blur-xl)"/>
+  <ellipse cx="1110" cy="55"  rx="440" ry="310" fill="#233660" opacity="0.15" filter="url(#h-blur-xl)"/>
+  <ellipse cx="990"  cy="130" rx="220" ry="155" fill="#3a4e7e" opacity="0.08" filter="url(#h-blur-xl)"/>
 
   <!-- Copper depth — centre-field suggestion of space -->
-  <ellipse cx="580" cy="390" rx="260" ry="170" fill="#6b2c08" opacity="0.10" filter="url(#h-blur-xl)"/>
+  <ellipse cx="580" cy="390" rx="260" ry="170" fill="#6b2c08" opacity="0.03" filter="url(#h-blur-xl)"/>
 
   <!-- Faint architectural verticals (columns / doorframes) -->
   <rect x="400" y="0" width="1" height="675" fill="#f5f1ea" opacity="0.04" filter="url(#h-blur-sm)"/>
